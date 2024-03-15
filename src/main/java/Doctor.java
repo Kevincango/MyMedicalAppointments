@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Doctor extends User {
   private String speciality;
 
-  Doctor(String name, String speciality){
+  public Doctor(String name, String speciality){
     super(name, speciality);
     System.out.println("The name of the doctor is " + name);
     this.speciality = speciality;

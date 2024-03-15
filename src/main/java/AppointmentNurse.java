@@ -1,9 +1,9 @@
 import java.util.Date;
 
-public class AppointmentDoctor implements Ischedule {
+public class AppointmentNurse implements Ischedule {
   private int id;
+  private Nurse nurse;
   private Patient patient;
-  private Doctor doctor;
   private Date date;
   private String time;
 
@@ -22,19 +22,16 @@ public class AppointmentDoctor implements Ischedule {
   public void setPatient(Patient patient){
     this.patient = patient;
   }
-
   public Date getDate(){
     return date;
   }
   public void setDate(Date date){
     this.date = date;
   }
-  public void addAvailableAppointments(Date date, String time){
-    System.out.println("Adding appointment to doctor " + date + " " + time);
-  }
+  
   @Override
   public void schedule(Date date, String time) {
-      System.out.println("Scheduling appointment for doctor on " + date + " at " + time);
+    // Implementation of the schedule method
+    System.out.println("Scheduling appointment for nurse on " + date + " at " + time);
   }
-
 }

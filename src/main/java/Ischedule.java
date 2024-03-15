@@ -1,5 +1,5 @@
 import java.util.Date;
 
 public interface Ischedule {
-  public void addAvailableAppointments(Date date, String time);
+  void schedule(Date date, String time);
 }
