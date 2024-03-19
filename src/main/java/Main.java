@@ -20,6 +20,8 @@ public class Main {
       myPatient.setHeight(1.80);
       System.out.println(myPatient.getHeight());
 
+    User user = new Doctor("kevin", "kevin@gmail.com");
+    System.out.println(user.getName());
     
   }
 
