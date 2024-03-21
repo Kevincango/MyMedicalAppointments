@@ -52,4 +52,6 @@ public abstract class User {
     return "Name: " + this.name + "\nEmail: " + this.email + "\nAddress: " + this.address + "\nPhone number: " + this.phoneNumber;
   }
 
+  public abstract void showDataUser();
+
 }

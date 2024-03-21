@@ -17,6 +17,11 @@ public class Doctor extends User {
     this.speciality = speciality;
   }
 
+  @Override
+  public void showDataUser(){
+    System.out.println("Doctor's data: ");
+  }
+
   ArrayList<Doctor.AvailableAppointment> availableAppointments = new ArrayList<Doctor.AvailableAppointment>();
   
   public void addAvailableAppointments(Date date, String time){

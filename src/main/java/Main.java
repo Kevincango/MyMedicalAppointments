@@ -21,7 +21,7 @@ public class Main {
       System.out.println(myPatient.getHeight());
 
     User user = new Doctor("kevin", "kevin@gmail.com");
-    System.out.println(user.getName());
+    user.showDataUser();
     
   }
 
