@@ -22,6 +22,22 @@ public class Main {
 
     User user = new Doctor("kevin", "kevin@gmail.com");
     user.showDataUser();
+
+    User user1 = new User("Cantu", "cgomez@gmail.com") {
+      @Override
+      public void showDataUser() {
+        System.out.println("User data: ");
+      }
+    };
+
+    user1.showDataUser();
+
+   Ischedule ischedule = new Ischedule() {
+    @Override
+    public void schedule(Date date, String time) {
+        System.out.println("Scheduling appointment for doctor on " + date + " at " + time);
+    }
+};
     
   }
 
