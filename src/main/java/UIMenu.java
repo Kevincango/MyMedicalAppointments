@@ -1,8 +1,11 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class UIMenu {
 
 public static final String[] MONTHS = {"Janury", "Febreury", "March", "April", "May", "June", "July", "Agusth", "Septemner", "October", "Nomvember", "December"};
+  public static Doctor doctorLogged;
+  public static Patient patientLogged;
     public static void showMenu(){
         System.out.println("Welcome to My Appointments");
         System.out.println("Selecciona la opción deseada");
@@ -20,11 +23,12 @@ public static final String[] MONTHS = {"Janury", "Febreury", "March", "April", "
             switch (response){
                 case 1:
                     System.out.println("Doctor");
+                response = 0;
+                authUser(1);
                     break;
                 case 2:
                     response = 0;
-                    showPatientMenu();
-
+                authUser(2);
                     break;
                 case 0:
                     System.out.println("Thank you for you visit");
@@ -34,6 +38,39 @@ public static final String[] MONTHS = {"Janury", "Febreury", "March", "April", "
             }
         }while (response != 0);
     }
+
+  private static void authUser(int userType) {
+
+     ArrayList<Doctor> doctors = new ArrayList<Doctor>();
+
+    doctors.add(new Doctor("sergio", "sergio@mail.com"));
+
+    ArrayList<Patient> patiens = new ArrayList<Patient>();
+
+    patiens.add(new Patient("otro", "otro@mail.com"));
+
+    Boolean emailCorrect = false;
+
+    do{
+      System.out.println("Insert your email");
+      Scanner sc = new Scanner(System.in);
+      String email = sc.nextLine();
+      if(userType == 1){
+        for(Doctor doctor : doctors){
+          if(doctor.getEmail().equals(email));
+          emailCorrect = true;
+          doctorLogged = doctor;
+        }
+      }
+      if(userType == 2){
+        for(Patient patient : patiens){
+          if(patient.getEmail().equals(email));
+          emailCorrect = true;
+          patientLogged = patient;
+        }
+      }
+    }while(!emailCorrect);
+  }
 
     public static void showPatientMenu(){
         int response = 0;
