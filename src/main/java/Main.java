@@ -34,7 +34,7 @@ public class Main {
 
    Ischedule ischedule = new Ischedule() {
     @Override
-    public void schedule(Date date, String time) {
+    public void schedule(String date, String time) {
         System.out.println("Scheduling appointment for doctor on " + date + " at " + time);
     }
 };

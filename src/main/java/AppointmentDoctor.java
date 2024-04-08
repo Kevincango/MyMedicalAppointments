@@ -33,7 +33,7 @@ public class AppointmentDoctor implements Ischedule {
     System.out.println("Adding appointment to doctor " + date + " " + time);
   }
   @Override
-  public void schedule(Date date, String time) {
+  public void schedule(String date, String time) {
       System.out.println("Scheduling appointment for doctor on " + date + " at " + time);
   }
 

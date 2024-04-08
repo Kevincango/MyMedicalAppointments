@@ -1,7 +1,10 @@
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class UIDoctorMenu {
+
+  public static ArrayList<Doctor> doctorsAvailableAppointments = new ArrayList<Doctor>();
 
   public static void showDoctorMenu(){
     int response = 0;
@@ -53,10 +56,31 @@ public class UIDoctorMenu {
         String date = sc.nextLine();
 
         System.out.println("Your date is " + date + "\n1. Confirm\n2. Cancel");
+        int responseDate = Integer.valueOf(sc.nextLine());
+
+        if(responseDate == 2) continue;
+
+        int responseTime = 0;
+        String time = "";
+        do{
+          System.out.println("Insert the time available for date " + date + "[16:00] ");
+          time = sc.nextLine();
+          System.out.print("Your time is " + time + "\n1. Confirm\n2. Cancel");
+          responseTime = Integer.valueOf(sc.nextLine());
+        }while(responseTime == 2);
+
+        UIMenu.doctorLogged.addAvailableAppointments(date, time);
+        checkDoctorAvaliableAppointments(UIMenu.doctorLogged);
 
       }else if(response == 0){
         showDoctorMenu();
       }
     }while(response != 0);
+  }
+
+  private static void checkDoctorAvaliableAppointments(Doctor doctor){
+    if(doctor.getAvailableAppointments().size() == 0 && !doctorsAvailableAppointments.contains(doctor)){
+      doctorsAvailableAppointments.add(doctor);
+    }
   }
 }
