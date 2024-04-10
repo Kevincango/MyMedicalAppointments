@@ -60,6 +60,7 @@ public static final String[] MONTHS = {"Janury", "Febreury", "March", "April", "
           if(doctor.getEmail().equals(email));
           emailCorrect = true;
           doctorLogged = doctor;
+          UIDoctorMenu.showDoctorMenu();
         }
       }
       if(userType == 2){

@@ -42,7 +42,7 @@ public class Doctor extends User {
     private int id;
     private Date date;
     private String time;
-    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy"");
+    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
     public AvailableAppointment(String date, String time){
       try{

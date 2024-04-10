@@ -29,12 +29,10 @@ public class AppointmentDoctor implements Ischedule {
   public void setDate(Date date){
     this.date = date;
   }
-  public void addAvailableAppointments(Date date, String time){
-    System.out.println("Adding appointment to doctor " + date + " " + time);
-  }
+ 
   @Override
-  public void schedule(String date, String time) {
-      System.out.println("Scheduling appointment for doctor on " + date + " at " + time);
+  public void schedule(Date date, String time) {
+    // Implement the scheduling logic here
   }
 
 }
