@@ -49,6 +49,7 @@ public class UIPatientMenu {
         
           doctorAppointments.put(Integer.valueOf(j), UIDoctorMenu.doctorsAvailableAppointments.get(i));
 
+
           doctors.put(Integer.valueOf(k), doctorAppointments);
         }
       }
