@@ -1,8 +1,21 @@
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Patient extends User {
   private String birthday;
   private double weight;
   private double height;
   private String blood;
+
+  private ArrayList<AppointmentDoctor> appointmentsDoctor = new ArrayList<AppointmentDoctor>();
+
+  private ArrayList<AppointmentNurse> appointmentNurse = new ArrayList<AppointmentNurse>();
+
+  public void addAppointmentDoctors(Doctor doctor, Date date, String time){
+    AppointmentDoctor appointmentDoctor = new AppointmentDoctor(this, doctor);
+    appointmentDoctor.schedule(date, time);
+    appointmentsDoctor.add(appointmentDoctor);
+  }
 
   public Patient(String name, String email){
     super(name, email);
@@ -48,6 +61,6 @@ public class Patient extends User {
 
   @Override
   public void showDataUser(){
-    System.out.println("Patient'data: ");
+    System.out.println("Patient's data: ");
   }
 }
