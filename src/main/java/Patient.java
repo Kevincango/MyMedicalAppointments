@@ -17,6 +17,10 @@ public class Patient extends User {
     appointmentsDoctor.add(appointmentDoctor);
   }
 
+  public ArrayList<AppointmentDoctor> getAppointmentDoctors(){
+    return appointmentsDoctor;
+  }
+
   public Patient(String name, String email){
     super(name, email);
     

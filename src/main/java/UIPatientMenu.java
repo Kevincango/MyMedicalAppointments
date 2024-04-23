@@ -21,8 +21,10 @@ public class UIPatientMenu {
 
       switch(response){
         case 1:
+          UIMenu.showPatientMenu();
           break;
         case 2:
+          showMyAppointments();
           break;
         case 0:
           UIMenu.showMenu();
@@ -70,7 +72,7 @@ public class UIPatientMenu {
 
       if(response == 1){
         UIMenu.patientLogged.addAppointmentDoctors(
-doctorSelected,           doctorSelected.getAvailableAppointments().get(indexDate).getDate(null),
+doctorSelected,           doctorSelected.getAvailableAppointments().get(indexDate).getDate(),
 doctorSelected.getAvailableAppointments().get(indexDate).getTime());
       }
       
@@ -81,15 +83,14 @@ doctorSelected.getAvailableAppointments().get(indexDate).getTime());
     int response = 0;
     do{
       System.out.println("");
-      if(UIMenu.patientLogged.getAppointmentDoctors().size() == 0){
+      if(UIMenu.patientLogged.getAppointmentDoctors().size()== 0){
         break;
       }
 
-      for(int i = 0; i < UIMenu.patientLogged.getAppointmentDoctors().size(); i++)){
-        System.out.println(" " + 
-                          UIMenu.patientLogged.getAppointmentDoctors().get(i).getDate() + 
-                          UIMenu.patientLogged.getAppointmentDoctors().get(i).getTime() + 
-                          UIMenu.patientLogged.getAppointmentDoctor().get(i).getDoctor().getName());
+      for(int i = 0; i < UIMenu.patientLogged.getAppointmentDoctors().size(); i++){
+        System.out.println(" " + " " + 
+                          UIMenu.patientLogged.getAppointmentDoctors().get(i).getDate() + " " +
+                          UIMenu.patientLogged.getAppointmentDoctors().get(i).getTime());
       }
     }while(response != 0);
   }
